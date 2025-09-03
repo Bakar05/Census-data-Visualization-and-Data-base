@@ -4,11 +4,11 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Database connection
-username = 'root'
-password = 'ab1234'
-host = 'localhost'
-port = 3308
-database_name = 'population_1960_to_2024'
+username = 
+password = 
+host = 
+port = 
+database_name = 
 
 engine = create_engine(f'mysql+pymysql://{username}:{password}@{host}:{port}/{database_name}')
 
@@ -58,26 +58,28 @@ def Long_Format_Population_Data(country_name, upper_limit=None, lower_limit=None
 
 # Function for plotting view no 2
 def Global_Population_Growth(upper_limit, lower_limit):
-    query = f"""
-        SELECT * 
-        FROM Global_Population_Growth 
-        WHERE year BETWEEN {lower_limit} AND {upper_limit}
-        ORDER BY year ASC;
+    query = f""" 
+        SELECT * FROM Global_Population_Growth 
+        WHERE year BETWEEN {lower_limit} AND {upper_limit} 
+        ORDER BY year ASC; 
     """
+
     df = pd.read_sql_query(query, engine)
 
     plt.figure(figsize=(12, 7))
-    ax = plt.bar(df['year'], df['total_population'], color="#2E86AB")
+    ax = sns.lineplot(data=df, x="year", y="total_population", linewidth=3, color="#2E86AB")
+    plt.fill_between(df['year'], df['total_population'], alpha=0.2, color="#2E86AB")
+
     plt.title(f"Global Population Growth ({lower_limit}-{upper_limit})", fontsize=16, fontweight='bold')
     plt.xlabel("Year")
     plt.ylabel("Total Population")
 
-    ax = plt.gca()
     ax.yaxis.set_major_formatter(plt.FuncFormatter(format_population))
 
-    plt.grid(True, alpha=0.3, axis='y')
+    plt.grid(True, alpha=0.3)
     plt.xticks(rotation=45)
     plt.tight_layout()
+
     plt.savefig(f"global_population_{lower_limit}_{upper_limit}.png")
     plt.show()
 
@@ -99,8 +101,13 @@ def Era_Analysis(country_name):
     df_filtered = df.rename(columns={"total_population": "population"})
 
     # Map the era names
-    era_map = {'post_colonial': 'Post-Colonial (1960)', 'globalization': 'Globalization (1980)', 'millennium': 'Millennium (2000)', 'sdg': 'SDG Era (2010)', 'covid': 'COVID Era (2020)' }
-
+    era_map = {
+        'Post-Colonial': 'Post-Colonial',
+        'Globalization': 'Globalization',
+        'Millennium_and_Financial_Crisis': 'Millennium',
+        'SDG_and_digital_transformation_Era': 'SDG',
+        'COVID_and_Recovery_Era': 'COVID'
+    }
     df_filtered['era'] = df_filtered['era'].map(era_map)
 
     plt.figure(figsize=(12, 7))
@@ -239,4 +246,4 @@ def main():
             print("Invalid choice. Please select an option from 1 to 5.")
 
 if __name__ == "__main__":
-    main() 
+    main()
