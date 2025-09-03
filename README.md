@@ -99,14 +99,14 @@ Total world population growth trend across years.
 
 ### 🔹 Era Analysis – Pakistan
 
-Bar chart showing India’s average population across different historical eras.
+Bar chart showing Pakistan’s average population across different historical eras.
 ![Pakistan Era Analysis](pngs/Pakistan_era_analysis.png)
 
 ---
 
 ### 🔹 Cross-Era Comparison – Pakistan vs Japan
 
-Bar chart comparing population across eras between India and China.
+Bar chart comparing population across eras between Pakistan and Japan.
 ![Pakistan vs Japan Comparison](pngs/Pakistan_vs_Japan_comparison.png)
 
 ---
