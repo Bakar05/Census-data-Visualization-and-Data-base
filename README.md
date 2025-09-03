@@ -86,27 +86,27 @@ database_name = 'your_database_name'
 ### 🔹 Pakistan Population Trend (1960–2024)
 
 Line chart showing Pakistan’s population growth between 1960 and 2024.
-![Pakistan Population Trend](Pakistan_1960_2024.png)
+![Pakistan Population Trend](pngs/Pakistan_population_1960_2024.png)
 
 ---
 
 ### 🔹 Global Population Growth (1960–2024)
 
 Total world population growth trend across years.
-![Global Population Growth](global_population_growth.png)
+![Global Population Growth](pngs/global_population_1960_2024.png)
 
 ---
 
-### 🔹 Era Analysis – India
+### 🔹 Era Analysis – Pakistan
 
 Bar chart showing India’s average population across different historical eras.
-![India Era Analysis](India_era_analysis.png)
+![Pakistan Era Analysis](pngs/Pakistan_era_analysis.png)
 
 ---
 
-### 🔹 Cross-Era Comparison – India vs China
+### 🔹 Cross-Era Comparison – Pakistan vs Japan
 
 Bar chart comparing population across eras between India and China.
-![India vs China Comparison](India_vs_China_comparison.png)
+![Pakistan vs Japan Comparison](pngs/Pakistan_vs_Japan_comparison.png)
 
 ---
